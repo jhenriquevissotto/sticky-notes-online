@@ -4,6 +4,8 @@ import components from './components'
 
 const store = createStore(persist({
     components,
+}, {
+    storage: 'localStorage', 
 }))
 
 
