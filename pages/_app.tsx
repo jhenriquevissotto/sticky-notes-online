@@ -1,3 +1,6 @@
+// polyfill
+import 'core-js'
+
 // framework
 import { Fragment as MyDocument } from 'react'
 

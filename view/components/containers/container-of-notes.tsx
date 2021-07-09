@@ -1,5 +1,5 @@
-import * as Rdx from 'easy-peasy'
 import { css } from 'styled-components'
+import * as Rdx from '../../../model/store'
 import NewNote from '../../../view/components/cards/new-note'
 import StickyNote from '../../../view/components/cards/sticky-note'
 

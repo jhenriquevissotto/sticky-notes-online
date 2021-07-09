@@ -1,7 +1,7 @@
 // import Rct from 'react'
 import cn from 'classnames'
 import { css } from 'styled-components'
-import * as Rdx from 'easy-peasy'
+import * as Rdx from '../../../model/store'
 
 
 const styles = {
@@ -34,6 +34,7 @@ const content = {
     onlyFav:        { en: 'Only Favorites'              },
     delAll:         { en: 'Delete All Notes'            },
 }
+
 
 
 

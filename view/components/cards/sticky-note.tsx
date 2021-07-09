@@ -1,6 +1,6 @@
 import Rct from 'react'
 import { css } from 'styled-components'
-import * as Rdx from 'easy-peasy'
+import * as Rdx from '../../../model/store'
 // import moment from 'moment'
 
 // icons
@@ -8,6 +8,10 @@ import { FaTimesCircle, FaCalendarDay, FaCheckCircle } from 'react-icons/fa'
 import { RiEditCircleFill } from 'react-icons/ri'
 import { GiRoundStar } from 'react-icons/gi'
 import { MdStars } from 'react-icons/md'
+
+// ts
+import { FC, TextareaHTMLAttributes } from 'react'
+import PropTypes from 'prop-types'
 
 
 // styles
@@ -78,6 +82,17 @@ const content = {
 }
 
 
+// props
+StickyNote.propTypes = {
+    'data': PropTypes.shape({
+        'id':           PropTypes.string, 
+        'text':         PropTypes.string, 
+        'isFavorite':   PropTypes.bool, 
+        'datetime':     PropTypes.string,
+    }),
+}
+
+
 // component
 export default function StickyNote({ data }) {
     // data
@@ -86,7 +101,7 @@ export default function StickyNote({ data }) {
     
     // refs
     const ref = {
-        textarea: Rct.useRef(),
+        textarea: Rct.useRef<TextareaHTMLAttributes>(),
     }
 
     // actions

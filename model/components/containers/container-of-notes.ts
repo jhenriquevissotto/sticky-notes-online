@@ -1,8 +1,27 @@
 import { action } from 'easy-peasy'
 import moment from 'moment'
 import shortid from 'shortid'
+// ts
+import { Action } from 'easy-peasy'
 
 
+interface IistOfNotes {
+    id: string
+    text: string 
+    isFavorite: boolean
+    datetime: string    
+}
+
+export interface ContainerOfNotes {
+    // state
+    listOfNotes: IistOfNotes[]
+    // actions
+    newNote:            Action<ContainerOfNotes>
+    setFavoriteById:    Action<ContainerOfNotes, { id: string, isFavorite: boolean }>
+    editNoteById:       Action<ContainerOfNotes, { id: string, text: string }>
+    deleteNoteById:     Action<ContainerOfNotes, { id: string }>
+    deleteAllNotes:     Action<ContainerOfNotes>
+}
 
 
 const containerOfNotes = {
