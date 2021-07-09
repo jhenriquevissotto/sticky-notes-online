@@ -13,7 +13,7 @@ const containerOfNotes = {
         id: shortid.generate(),
         text: '', 
         isFavorite: false,
-        datetime: moment().format('YYYY-MM-DD hh:mm:ss'),
+        datetime: moment().format('YYYY-MM-DD hh:mm'),
     }),
     
     // ========================= //
@@ -24,7 +24,7 @@ const containerOfNotes = {
             id: shortid.generate(),
             text: '', 
             isFavorite: false,
-            datetime: moment().format('YYYY-MM-DD hh:mm:ss'),
+            datetime: moment().format('YYYY-MM-DD hh:mm'),
         }) 
     }),
 
