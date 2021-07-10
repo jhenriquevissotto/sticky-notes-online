@@ -1,9 +1,15 @@
 import element from '../../../libs/helpers/element'
 
 // ts
-// import { FC, ReactNode } from 'react'
+import { ReactChildren } from 'react'
 
 
-export default function Text({ children, as, ...props }) {
+interface Props {
+    children: ReactChildren 
+    as: string
+    props: any
+}
+
+export default function Text({ children, as, ...props }: Props) {
     return element.create(as, props, children)
 }

@@ -1,17 +1,27 @@
 import { createElement, cloneElement } from 'react'
 // ts
-// import PropTypes from 'prop-types'
-// import { FC, ReactNode } from 'react'
+import { ReactElement, ReactChildren } from 'react'
 
-export function CreateElement({ children, tag, ...props }) {
+
+interface CreateElementProps {
+    children: ReactChildren
+    tag: string
+    props: any
+}
+
+interface CloneElementProps {
+    comp: ReactElement
+    props: any
+}
+
+
+export function CreateElement({ children, tag, ...props }: CreateElementProps) {
     return createElement(tag, props, children)
 }
 
-
-export function CloneElement({ comp, ...props }) {
+export function CloneElement({ comp, ...props }: CloneElementProps) {
     return cloneElement(comp, props) 
 }
-
 
 
 const element = {
