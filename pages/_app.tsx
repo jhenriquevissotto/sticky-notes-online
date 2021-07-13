@@ -8,6 +8,7 @@ import { Fragment as MyDocument } from 'react'
 // import '../public/assets/styles/global-style.css'
 import GlobalStyle from '../public/assets/styles/global-style'
 import CustomStyle from '../public/assets/styles/custom-style'
+// import 'tailwindcss/tailwind.css'
 
 // model
 import { StoreProvider } from 'easy-peasy'

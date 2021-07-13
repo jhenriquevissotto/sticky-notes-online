@@ -11,6 +11,7 @@ const content = {
 }
 
 
+
 export default function PageIndex() {
   return (
     <MyApp>

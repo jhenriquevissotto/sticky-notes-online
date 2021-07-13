@@ -11,7 +11,7 @@ export interface ControllerOfNotes {
 }
 
 
-const controllerOfNotes = {
+const controllerOfNotes: ControllerOfNotes = {
     // state
     showOnlyFav: false,
 

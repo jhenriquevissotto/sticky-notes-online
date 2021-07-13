@@ -16,9 +16,9 @@ dotenv.config({ path: './config/vars.env' })
 
 const nextConfig = {
 	// distDir: 'build',
+	reactStrictMode: true,
 	experimental: { eslint: true },
 	eslint: true
-	// reactStrictMode: true,
 	// cssModules: true,
 
 

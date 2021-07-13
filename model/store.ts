@@ -10,7 +10,7 @@ interface Store {
 }
 
 
-const store = createStore(persist({
+const store = createStore<Store>(persist({
     components,
 }, {
     storage: 'localStorage', 

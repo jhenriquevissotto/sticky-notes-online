@@ -1,8 +1,9 @@
-import { action } from 'easy-peasy'
+import { computed, action } from 'easy-peasy'
 import moment from 'moment'
 import shortid from 'shortid'
 // ts
-import { Action } from 'easy-peasy'
+import { Computed, Action } from 'easy-peasy'
+import { Store } from '../../store'
 
 
 interface IistOfNotes {
@@ -15,6 +16,7 @@ interface IistOfNotes {
 export interface ContainerOfNotes {
     // state
     listOfNotes: IistOfNotes[]
+    
     // actions
     newNote:            Action<ContainerOfNotes>
     setFavoriteById:    Action<ContainerOfNotes, { id: string, isFavorite: boolean }>
@@ -24,7 +26,7 @@ export interface ContainerOfNotes {
 }
 
 
-const containerOfNotes = {
+const containerOfNotes: ContainerOfNotes = {
     // ======================= //
     // ======== state ======== //
     // ======================= //
@@ -34,6 +36,7 @@ const containerOfNotes = {
         isFavorite: false,
         datetime: moment().format('YYYY-MM-DD hh:mm'),
     }),
+    
     
     // ========================= //
     // ======== actions ======== //
@@ -49,12 +52,14 @@ const containerOfNotes = {
 
     setFavoriteById: action((stt, pld) => {
         const { id, isFavorite } = pld
-        stt.listOfNotes.find(i => i.id == id).isFavorite = isFavorite
+        const match = stt.listOfNotes.find(i => i.id == id)
+        if (match) match.isFavorite = isFavorite
     }),
 
     editNoteById: action((stt, pld) => {
         const { id, text } = pld
-        stt.listOfNotes.find(i => i.id == id).text = text
+        const match = stt.listOfNotes.find(i => i.id == id)
+        if (match) match.text = text
     }),
 
     deleteNoteById: action((stt, pld) => {

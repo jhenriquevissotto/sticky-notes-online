@@ -13,6 +13,9 @@ import { MdStars } from 'react-icons/md'
 import { TextareaHTMLAttributes } from 'react'
 
 
+
+
+
 // styles
 const styles = {
     container: css`
@@ -106,13 +109,11 @@ export default function StickyNote({ data }: Props) {
     // actions
     const { editNoteById, setFavoriteById, deleteNoteById } = Rdx.useStoreActions(str => str.components.containers.containerOfNotes)
 
-
+    
     // controller
     const ctrl = (() => {
         // state
-        const [stt, dsp] = Rct.useState<{
-            isEditing: boolean
-        }>({
+        const [stt, dsp] = Rct.useState({
             isEditing: false,
         })
 
